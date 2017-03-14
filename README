@@ -1,0 +1,50 @@
+name:			Eddy J. Tang
+ONE Card number:	1430371
+Unix id: 		ejtang
+lecture section:	A1
+instructor's name:	Neil Burch
+lab section: 		D04
+TA's name:		Chao Gao
+
+Compile by typing make.
+
+Ensure that the executable Sketchpad.jar is in the current directory to make sure the program works.
+
+run by typing 
+
+./lander -g [gravity] -t [thrust] -f [inputfile] -i(optional)
+
+Where the inputfile is any file with valid input for a landscape for the lunarlander game.
+The thruster has to be a value between 0 and -20.
+The gravity had to be a value beween 0 and 20.
+
+Collaberation includes 
+
+- the idea of using offsets x and y to print the ship
+  instead of moving the ship itself. From Malcolm Fischer.
+- init_ncurses and shutdown_ncurses from the example files
+  included in the files provided for us for this assignment
+- bits of the timer code from and handle_timeout; also from
+  the example files provided to us for this assignment
+- and most of the lineSegmentIntersect code from the link
+  http://alienryderflex.com/intersect/ provided to us
+  in the assignment description.
+
+
+Improvements made (only availiable when ran with -i option)
+
+- use of flags with getopts. Our input can be recieved in any order
+  and works just like the one in the example lander. Detection
+  of flags as well as detection of unknown flags are also done.
+- screen wrapping. So when the ship is about to go off the right side of
+  the screen, it will reappear on the left and vice versa. If the ship 
+  appears under the landscape, then it will have crashed.
+- when the ship lands the thruster is always removed after landing.
+  (I feel that this is more logical and looks better.)
+- players are now allowed to press r anytime and restart the game.
+- stablization now availiable!!! players are now able to activate
+  a stalizer in their ship for smooth landing, all you have to
+  do is press 's' to activate or deactivate it.
+
+Improvements made (availiable without the -i option)
+- unlimited amount of line segments in the landscape file
